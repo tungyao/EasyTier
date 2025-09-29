@@ -749,10 +749,7 @@ impl StunInfoCollector {
         // NOTICE: we may need to choose stun server based on geolocation
         // stun server cross nation may return an external ip address with high latency and loss rate
         [
-            "117.72.179.59:3478",
-            "stun.miwifi.com",
-            "stun.chat.bilibili.com",
-            "stun.hitv.com",
+            "117.72.179.59:3478"
         ]
         .iter()
         .map(|x| x.to_string())
