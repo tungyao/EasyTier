@@ -45,7 +45,6 @@ jobs:
         run: |
           mkdir zipped_assets
 
-          find release_assets_nozip -type f -exec mv {} zipped_assets \;
           ls -l -R ./zipped_assets
 
           cd release_assets
