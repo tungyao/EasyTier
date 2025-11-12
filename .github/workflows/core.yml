@@ -300,4 +300,4 @@ jobs:
         with:
           token: ${{secrets.bot}}
           files: | 
-            ./artifacts/objects/**
+            ./artifacts/*
