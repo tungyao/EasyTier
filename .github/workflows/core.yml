@@ -1,10 +1,15 @@
 name: EasyTier Core
 
 on:
-  push:
-    branches: ["develop", "main", "releases/**"]
-  pull_request:
-    branches: ["develop", "main"]
+  push: # 在push时触发
+    tags: # 标签  这里标识在push tag时触发
+      - 'v*' # 以v开头的版本
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'version to build'
+        required: true
+        default: '1.0.0'
 
 env:
   CARGO_TERM_COLOR: always
@@ -294,6 +299,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           token: ${{secrets.bot}}
-          if: github.ref_type == 'tag'
+          if: startsWith(github.ref, 'refs/tags/') # 仅在tag时上传
           files: | 
             ./artifacts/objects/**
