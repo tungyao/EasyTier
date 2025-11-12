@@ -294,5 +294,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           token: ${{secrets.bot}}
+          if: github.ref_type == 'tag'
           files: | 
             ./artifacts/objects/**
