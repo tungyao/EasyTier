@@ -1105,7 +1105,6 @@ impl StunInfoCollector {
         // NOTICE: we may need to choose stun server based on geolocation
         // stun server cross nation may return an external ip address with high latency and loss rate
         [
-            "txt:stun.easytier.cn",
             "stun.miwifi.com",
             "stun.chat.bilibili.com",
             "stun.hitv.com",
@@ -1117,13 +1116,7 @@ impl StunInfoCollector {
 
     pub fn get_default_tcp_servers() -> Vec<String> {
         [
-            "stun.hot-chilli.net",
-            "stun.fitauto.ru",
-            "fwa.lifesizecloud.com",
-            "global.turn.twilio.com",
             "turn.cloudflare.com",
-            "stun.voip.blackberry.com",
-            "stun.radiojar.com",
         ]
         .iter()
         .map(|x| x.to_string())
@@ -1131,7 +1124,7 @@ impl StunInfoCollector {
     }
 
     pub fn get_default_servers_v6() -> Vec<String> {
-        ["txt:stun-v6.easytier.cn"]
+        []
             .iter()
             .map(|x| x.to_string())
             .collect()
