@@ -1124,10 +1124,7 @@ impl StunInfoCollector {
     }
 
     pub fn get_default_servers_v6() -> Vec<String> {
-        []
-            .iter()
-            .map(|x| x.to_string())
-            .collect()
+         Vec::new()
     }
 
     async fn get_public_ipv6(servers: &[String]) -> Option<Ipv6Addr> {
